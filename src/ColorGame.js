@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Color = () => {
+const ColorGame = () => {
   const [colors, setColors] = useState([]);
   const [targetColor, setTargetColor] = useState('');
   const [score, setScore] = useState(0);
@@ -22,7 +22,7 @@ const Color = () => {
       setScore(score + 1);
       generateColors(); // Automatically generate new colors when correct
     } else {
-      setGameStatus('Wrong! Olodo. 😝');
+      setGameStatus('Wrong! Olodo. 😝😂😂');
     }
   };
 
@@ -50,10 +50,10 @@ const Color = () => {
           ></button>
         ))}
       </div>
-      <p data-testid="gameStatus">{gameStatus}</p>
+      <p className="game-status animated-status" data-testid="gameStatus">{gameStatus}</p>
       <button onClick={startNewGame} data-testid="newGameButton" className="new-game-btn">New Game</button>
     </div>
   );
 };
 
-export default Color;
+export default ColorGame;

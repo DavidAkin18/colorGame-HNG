@@ -73,3 +73,18 @@
   background: linear-gradient(135deg, #0056b3, #003c80);
   transform: scale(1.05);
 }
+.game-status {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+.game-status.animated-status {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}

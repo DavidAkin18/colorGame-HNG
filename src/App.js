@@ -1,9 +1,9 @@
-import Color from "./Color";
+import ColorGame from "./ColorGame";
 
 function App() {
   return (
     <div className="App">
-      <Color/>
+      <ColorGame/>
     </div>
   );
 }
