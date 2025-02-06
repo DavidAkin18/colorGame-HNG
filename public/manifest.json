@@ -1,6 +1,7 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
+  "description": "A sample React application created with Create React App.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,16 +11,71 @@
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"  // Added purpose for maskable icon
     },
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any" //Good practice to specify icon purpose
+    },
+     {
+      "src": "logo192_maskable.png", // Add a dedicated maskable icon
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"  // Explicitly state it's maskable
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "scope": "/",       // Define the scope of the PWA
+  "orientation": "any", // Allow any orientation (portrait or landscape)
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"], // Consider display modes.
+  "categories": ["utilities", "productivity"], // Add categories
+  "screenshots": [ // Add screenshots for a richer PWA install experience.
+      {
+        "src": "screenshot1.png",
+        "sizes": "1280x720",
+        "type": "image/png",
+        "label": "Homepage view"
+      },
+      {
+        "src": "screenshot2.png",
+        "sizes": "1280x720",
+        "type": "image/png",
+        "label": "Example feature page"
+      }
+    ],
+  "shortcuts" : [ // Define shortcuts for quick actions
+    {
+      "name": "View Profile",
+      "short_name": "Profile",
+      "description": "Go to your profile page",
+      "url": "/profile",
+      "icons": [{ "src": "/profile_icon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Create New Post",
+      "short_name": "New Post",
+      "description": "Create a new post",
+      "url": "/new-post",
+      "icons": [{ "src": "/new_post_icon.png", "sizes": "96x96" }]
+    }
+    ],
+    "related_applications": [ // Link to native app if you have one
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.example.app",
+        "id": "com.example.app"
+    },
+    {
+        "platform": "itunes",
+        "url": "https://itunes.apple.com/app/example-app/id123456789"
+    }
+  ],
+   "prefer_related_applications": false  // Prioritize web app or native.  'true' is good if your native app has features the web app *lacks*.
+
 }
